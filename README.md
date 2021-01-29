@@ -8,7 +8,21 @@ launch on boot using [systemd](https://www.freedesktop.org/wiki/Software/systemd
 
 The package includes a precompiled version of HamClock built for the
 Raspberry Pi frame buffer fb0 800x480 pixes which matches the Raspberry Pi
-7 inch touch display.
+7 inch touch display. This is the version that is configured to start.
+The package (as of 2.57.2-4) includes all four versions of HamClock for the
+frame buffer:
+* `hamclock-fb0-800x480`
+* `hamclock-fb0-1600x960`
+* `hamclock-fb0-2400x1440`
+* `hamclock-fb0-3200x1920`
+
+To use a different display size edit `/etc/systemd/system/hamclock.service`
+and change the line `ExecStart=/usr/local/bin/hamclock-fb0-800x480` to
+start the version that matches your system.
+
+This change makes the package and the installed footprint a little bigger.
+Each version is about 4 MB, to even with a smallish 8 GB SDCard that is not
+really significant.
 
 ## Versioning
 
