@@ -1,0 +1,7 @@
+#!/bin/bash
+
+for target in "hamclock-fb0-800x480" "hamclock-fb0-1600x960" "hamclock-fb0-2400x1440" "hamclock-fb0-3200x1920"
+do
+	echo $target
+	(cd ESPHamClock; make -j 4 $target; mv $target ..)
+done
