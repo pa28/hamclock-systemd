@@ -24,7 +24,9 @@ understood as:
 
 Some binary packages will be attached to this source repository, however
 a better way to get the most current version built would be to add my
-package repository to your system.
+package repository to your system. I will try to keep the packages up
+to date, but won't necessarily add all new packages to this GitHub
+repository.
 
 ### Package Repository
 
