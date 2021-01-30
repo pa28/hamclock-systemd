@@ -24,6 +24,15 @@ This change makes the package and the installed footprint a little bigger.
 Each version is about 4 MB, relative to even a smallish 8 GB SDCard that is not
 really significant.
 
+### Install Witout adding the Package Repository.
+
+You can download an APT package from the GitHub repository Releases to your Pi and
+install directly from the file:
+```
+wget https://github.com/pa28/hamclock-systemd/releases/download/v2.57.2.4/hamclock-systemd-2.57.2-4.armv7l.deb
+sudo apt install -f ./hamclock-systemd-2.57.2-4.armv7l.deb
+```
+
 ## Versioning
 
 The package versioning is designed to follow HamClock versioning and
