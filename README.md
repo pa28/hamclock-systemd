@@ -21,7 +21,7 @@ and change the line `ExecStart=/usr/local/bin/hamclock-fb0-800x480` to
 start the version that matches your system.
 
 This change makes the package and the installed footprint a little bigger.
-Each version is about 4 MB, to even with a smallish 8 GB SDCard that is not
+Each version is about 4 MB, relative to even a smallish 8 GB SDCard that is not
 really significant.
 
 ## Versioning
