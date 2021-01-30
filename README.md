@@ -4,6 +4,13 @@ This project creates a Debian package to install a compiled version of
 [HamClock](https://www.clearskyinstitute.com/ham/HamClock/) and enable
 launch on boot using [systemd](https://www.freedesktop.org/wiki/Software/systemd/)
 
+## Running a Pi Headless
+
+Setting up a headless Raspberry Pi is not as straight forward as a regular set up.
+You may find the instructins and links in
+[PiHeadlessSetup](https://github.com/pa28/hamclock-systemd/blob/main/PiHeadlessSetup.md)
+helpful.
+
 ## Installation - APT Package
 
 The package includes a precompiled version of HamClock built for the
