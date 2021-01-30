@@ -31,7 +31,7 @@ This change makes the package and the installed footprint a little bigger.
 Each version is about 4 MB, relative to even a smallish 8 GB SDCard that is not
 really significant.
 
-### Install Witout adding the Package Repository.
+### Install Without adding the Package Repository.
 
 You can download an APT package from the GitHub repository Releases to your Pi and
 install directly from the file:
