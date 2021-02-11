@@ -16,7 +16,7 @@ helpful.
 The package includes a precompiled version of HamClock built for the
 Raspberry Pi frame buffer fb0 800x480 pixes which matches the Raspberry Pi
 7 inch touch display. This is the version that is configured to start.
-The package (as of 2.57.2-4) includes all four versions of HamClock for the
+The package (as of 2.57.2) includes all four versions of HamClock for the
 frame buffer:
 * `hamclock-fb0-800x480`
 * `hamclock-fb0-1600x960`
