@@ -4,6 +4,11 @@ This project creates a Debian package to install a compiled version of
 [HamClock](https://www.clearskyinstitute.com/ham/HamClock/) and enable
 launch on boot using [systemd](https://www.freedesktop.org/wiki/Software/systemd/)
 
+### Version 2.58
+
+Version 2.58 of [HamClock](https://www.clearskyinstitute.com/ham/HamClock/) has
+deprecated the use of /dev/fb0.
+
 ## Running a Pi Headless
 
 Setting up a headless Raspberry Pi is not as straight forward as a regular set up.

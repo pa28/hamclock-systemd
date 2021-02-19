@@ -1,8 +1,9 @@
 cmake_minimum_required(VERSION 3.13)
-project(hamclock-systemd VERSION 2.57.3.4)
+project(hamclock-systemd VERSION 2.58.4.5)
 include(GNUInstallDirs)
 
 install(FILES resources/systemd/hamclock.service DESTINATION /etc/systemd/system)
+install(FILES SourceCode/hamclock.png SourceCode/hamclock.desktop DESTINATION "${CMAKE_INSTALL_DATADIR}/hamclock")
 install(PROGRAMS
 	SourceCode/hamclock-fb0-800x480
 	SourceCode/hamclock-fb0-1600x960
