@@ -7,7 +7,12 @@ launch on boot using [systemd](https://www.freedesktop.org/wiki/Software/systemd
 ### Version 2.58
 
 Version 2.58 of [HamClock](https://www.clearskyinstitute.com/ham/HamClock/) has
-deprecated the use of /dev/fb0.
+deprecated the use of /dev/fb0. It does still build and run.
+
+This version of `hamclock-systemd` installs `hamclock.png` and `hamclock.desktop` in the
+[XDG](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html) standard
+shared data directory under the program name which on Debian is `/usr/local/share/hamclock/`
+though these are not of use unless you build the X-11 versions.
 
 ## Running a Pi Headless
 
