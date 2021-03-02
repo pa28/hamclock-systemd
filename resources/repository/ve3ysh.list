@@ -1,0 +1,4 @@
+# Repository with HAM Radio related software writtent by VE3YSH
+# This file is managed by apt package.
+# See: https://github.com/pa28/hamclock-systemd
+deb [trusted=yes] https://apt.fury.io/ve3ysh/ /

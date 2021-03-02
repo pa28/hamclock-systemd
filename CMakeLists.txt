@@ -6,6 +6,8 @@ install(FILES resources/systemd/hamclock.service DESTINATION /etc/systemd/system
 		COMPONENT HAMCLOCK_SYSTEMD EXCLUDE_FROM_ALL)
 install(FILES SourceCode/hamclock.png SourceCode/hamclock.desktop DESTINATION "${CMAKE_INSTALL_DATADIR}/hamclock"
 		COMPONENT HAMCLOCK EXCLUDE_FROM_ALL)
+install(FILES resources/repository/ve3ysh.list DESTINATION /etc/apt/sources.list.d
+		COMPONENT VE3YSH_REPO EXCLUDE_FROM_ALL)
 install(PROGRAMS
 	SourceCode/hamclock-fb0-800x480
 	SourceCode/hamclock-fb0-1600x960
@@ -31,6 +33,7 @@ set(CPACK_GENERATOR "DEB")
 set(CPACK_PACKAGE_NAME "${PROJECT_NAME}")
 set(CPACK_DEBIAN_HAMCLOCK_SYSTEMD_PACKAGE_NAME "${PROJECT_NAME}")
 set(CPACK_DEBIAN_HAMCLOCK_PACKAGE_NAME "hamclock")
+set(CPACK_DEBIAN_VE3YSH_REPO_PACKAGE_NAME "ve3ysh-repo")
 set(CPACK_DEBIAN_PACKAGE_SECTION "hamradio")
 set(CPACK_RPM_PACKAGE_URL "https://github.com/pa28/hamclock-systemd")
 set(CPACK_RPM_PACKAGE_SUMMARY "Autorun HamClock using systemd")
@@ -62,4 +65,6 @@ cpack_add_component(HAMCLOCK
 		DISPLAY_NAME "hamclock"
 		DESCRIPTION "Precompiled X11 hamclock binaries"
 		)
-
+cpack_add_componenT(VE3YSH_REPO
+		DISPLAY_NAME "ve3ysh-repo"
+		DESCRIPTION "Aptitude package repository by VE3YSH")
