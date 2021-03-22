@@ -57,10 +57,10 @@ SET(CPACK_DEBIAN_PACKAGE_CONTROL_EXTRA "${CMAKE_CURRENT_SOURCE_DIR}/postinst")
 
 include(CPack)
 
-cpack_add_component(HAMCLOCK_SYSTEMD
-		DISPLAY_NAME "hamclock-systemd"
-		DESCRIPTION "A systemd way to autostart hamclock on /dev/fb0"
-		)
+#cpack_add_component(HAMCLOCK_SYSTEMD
+#		DISPLAY_NAME "hamclock-systemd"
+#		DESCRIPTION "A systemd way to autostart hamclock on /dev/fb0"
+#		)
 cpack_add_component(HAMCLOCK
 		DISPLAY_NAME "hamclock"
 		DESCRIPTION "Precompiled X11 hamclock binaries"
