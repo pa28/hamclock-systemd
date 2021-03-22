@@ -1,7 +1,8 @@
 #!/bin/bash
 
 #for target in "hamclock-fb0-800x480" "hamclock-fb0-1600x960" "hamclock-fb0-2400x1440" "hamclock-fb0-3200x1920" "hamclock-800x480" "hamclock-1600x960" "hamclock-2400x1440" "hamclock-3200x1920"
-for target in "hamclock-800x480" "hamclock-1600x960" "hamclock-2400x1440" "hamclock-3200x1920"do
+for target in "hamclock-800x480" "hamclock-1600x960" "hamclock-2400x1440" "hamclock-3200x1920"
+do
 	echo $target
 	(cd ESPHamClock; make -j 4 $target; mv $target ..)
 done
