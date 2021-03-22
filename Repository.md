@@ -34,6 +34,9 @@ sudo apt install -f ./ve3ysh-repo_2.59.5_armhf.deb
 
 ### HamClock systemd
 
+**Note:** As of version 2.60 HamClock does not build the ***fb0*** versions out of the box. The package for version 2.59
+is still available on the repository.
+
 To install the `fb0` targeted versions with the `systemd` (only available for ARM architecture) support files execute:
 
 `sudo apt install hamclock-systemd`
