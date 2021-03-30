@@ -85,15 +85,7 @@ install HamChrono and keep updated.
 
 #### Using an Aptitude Package -- The Easy Way
 
-See the [instructions here.](https://github.com/pa28/hamclock-systemd/blob/main/Repository.md)
-
-#### Manually Editing Files -- More Control
-
-On your Raspberry Pi or x86 Debian based distribution create this file:
-`/etc/apt/sources.list.d/ve3ysh.list`
-
-And insert this line:
-`deb [trusted=yes] https://apt.fury.io/ve3ysh/ /`
+See the [instructions here.](https://pa28.github.io/Repository)
 
 Then perform the following:
 ```
