@@ -14,6 +14,13 @@ This version of `hamclock-systemd` installs `hamclock.png` and `hamclock.desktop
 shared data directory under the program name which on Debian is `/usr/local/share/hamclock/`
 though these are not of use unless you build the X-11 versions.
 
+### Version 2.60
+
+As of version 2.60 [HamClock](https://www.clearskyinstitute.com/ham/HamClock/) binaries
+that support the use of /dev/fb0 no longer build using the provided source distribuion.
+The last successfully built package with thes binaries (Version 2.59) will continue to be
+available but new versions will not.
+
 ## Running a Pi Headless
 
 Setting up a headless Raspberry Pi is not as straight forward as a regular set up.
