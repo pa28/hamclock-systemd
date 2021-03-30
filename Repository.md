@@ -7,6 +7,8 @@ for Intel/AMD architecture running a Debian derived Linxu OS;
 * [`ve3ysh-repo_2.59.5_armhf.deb`](https://github.com/pa28/hamclock-systemd/releases/download/v2.59.5/ve3ysh-repo_2.59.5_armhf.deb)
 for Arm architecture running a Debian derived Linux OS such as Raspberry Pi OS.
 
+See the installation instructions for your architecture (Intel/AMD or ARM) below.
+
 ## Installation
 
 The following commands will install the `/etc/apt/sources.list.d/ve3ysh.list` file. The contents are:
