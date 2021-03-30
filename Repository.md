@@ -2,8 +2,10 @@
 
 There is an `aptitude` package that will make it somewhat easier to set up access to my package repository from which you can install the software.
 There are two packages:
-* `ve3ysh-repo_2.59.5_amd64.deb` for Intel/AMD architecture running a Debian derived Linxu OS;
-* `ve3ysh-repo_2.59.5_armhf.deb` for Arm architecture running a Debian derived Linux OS such as Raspberry Pi OS.
+* [`ve3ysh-repo_2.59.5_amd64.deb`](https://github.com/pa28/hamclock-systemd/releases/download/v2.59.5/ve3ysh-repo_2.59.5_amd64.deb)
+for Intel/AMD architecture running a Debian derived Linxu OS;
+* [`ve3ysh-repo_2.59.5_armhf.deb`](https://github.com/pa28/hamclock-systemd/releases/download/v2.59.5/ve3ysh-repo_2.59.5_armhf.deb)
+for Arm architecture running a Debian derived Linux OS such as Raspberry Pi OS.
 
 ## Installation
 
