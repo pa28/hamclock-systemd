@@ -21,6 +21,12 @@ that support the use of /dev/fb0 no longer build using the provided source distr
 The last successfully built package with thes binaries (Version 2.59) will continue to be
 available but new versions will not.
 
+### Versiion 2.63
+
+As of version 2.63 [HamClock](https://www.clearskyinstitute.com/ham/HamClock/) binaries
+that support the use of /dev/fb0 are building again and the hamclock-systemd package is
+available in my [repository](https://pa28.github.io/Repository).
+
 ## Running a Pi Headless
 
 Setting up a headless Raspberry Pi is not as straight forward as a regular set up.
