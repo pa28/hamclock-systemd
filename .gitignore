@@ -1,6 +1,7 @@
 .idea
 cmake-build-*
 ESPHamClock
+ESPHamClock.old
 hamclock-fb0-*
 hamclock-800*
 hamclock-1600*
@@ -8,4 +9,4 @@ hamclock-2400*
 hamclock-3200*
 hamclock.desktop
 hamclock.png
-ESPHamClock_*.zip
+*.zip
