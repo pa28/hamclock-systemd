@@ -1,4 +1,4 @@
-# hamclock-systemd
+# hamclock-systemd -- June 20, 2021
 
 This project creates a Debian package to install a compiled version of
 [HamClock](https://www.clearskyinstitute.com/ham/HamClock/) and enable
