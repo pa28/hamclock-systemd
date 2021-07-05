@@ -1,0 +1,6 @@
+#!/bin/bash
+
+rm -f ESPHamClock.tgz
+rm -rf ESPHamClock
+wget https://www.clearskyinstitute.com/ham/HamClock/ESPHamClock.tgz
+tar -zxvf ESPHamClock.tgz
