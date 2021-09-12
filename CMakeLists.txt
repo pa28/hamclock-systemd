@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.13)
-project(hamclock-systemd VERSION 2.68.6.6)
+project(hamclock-systemd VERSION 2.68.5.6)
 include(GNUInstallDirs)
 
 install(FILES resources/systemd/hamclock.service DESTINATION /etc/systemd/system
@@ -53,7 +53,7 @@ set(CPACK_RPM_EXCLUDE_FROM_AUTO_FILELIST_ADDITION
         /usr/lib/systemd
         /usr/lib/systemd/system
         )
-SET(CPACK_DEBIAN_HAMCLOCK_SYSTEMD_PACKAGE_CONTROL_EXTRA "${CMAKE_CURRENT_SOURCE_DIR}/postinst;${CMAKE_CURRENT_SOURCE_DIR}/preinst;")
+SET(CPACK_DEBIAN_HAMCLOCK_SYSTEMD_PACKAGE_CONTROL_EXTRA "${CMAKE_CURRENT_SOURCE_DIR}/postinst")
 
 include(CPack)
 
