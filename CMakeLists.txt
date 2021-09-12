@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.13)
-project(hamclock-systemd VERSION 2.68.6.6)
+project(hamclock-systemd VERSION 2.68.7.6)
 include(GNUInstallDirs)
 
 install(FILES resources/systemd/hamclock.service DESTINATION /etc/systemd/system
