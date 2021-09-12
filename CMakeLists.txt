@@ -8,13 +8,13 @@ install(FILES SourceCode/hamclock.png SourceCode/hamclock.desktop DESTINATION "$
 		COMPONENT HAMCLOCK EXCLUDE_FROM_ALL)
 install(FILES resources/repository/ve3ysh.list DESTINATION /etc/apt/sources.list.d
 		COMPONENT VE3YSH_REPO EXCLUDE_FROM_ALL)
-	#install(PROGRAMS
-	#SourceCode/hamclock-fb0-800x480
-	#SourceCode/hamclock-fb0-1600x960
-	#SourceCode/hamclock-fb0-2400x1440
-	#SourceCode/hamclock-fb0-3200x1920
-	#DESTINATION ${CMAKE_INSTALL_BINDIR}
-	#COMPONENT HAMCLOCK_SYSTEMD EXCLUDE_FROM_ALL)
+	install(PROGRAMS
+	SourceCode/hamclock-fb0-800x480
+	SourceCode/hamclock-fb0-1600x960
+	SourceCode/hamclock-fb0-2400x1440
+	SourceCode/hamclock-fb0-3200x1920
+	DESTINATION ${CMAKE_INSTALL_BINDIR}
+	COMPONENT HAMCLOCK_SYSTEMD EXCLUDE_FROM_ALL)
 
 install(PROGRAMS
 		SourceCode/hamclock-800x480

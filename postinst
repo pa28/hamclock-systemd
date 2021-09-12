@@ -1,2 +1,5 @@
 #!/bin/bash
 systemctl daemon-reload
+if systemctl is-enabled hamclock.service > /dev/null; then
+    systemctl restart hamclock.service
+fi
