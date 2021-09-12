@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.13)
-project(hamclock-systemd VERSION 2.63.5.6)
+project(hamclock-systemd VERSION 2.68.6.6)
 include(GNUInstallDirs)
 
 install(FILES resources/systemd/hamclock.service DESTINATION /etc/systemd/system
@@ -8,13 +8,13 @@ install(FILES SourceCode/hamclock.png SourceCode/hamclock.desktop DESTINATION "$
 		COMPONENT HAMCLOCK EXCLUDE_FROM_ALL)
 install(FILES resources/repository/ve3ysh.list DESTINATION /etc/apt/sources.list.d
 		COMPONENT VE3YSH_REPO EXCLUDE_FROM_ALL)
-install(PROGRAMS
-	SourceCode/hamclock-fb0-800x480
-	SourceCode/hamclock-fb0-1600x960
-	SourceCode/hamclock-fb0-2400x1440
-	SourceCode/hamclock-fb0-3200x1920
-	DESTINATION ${CMAKE_INSTALL_BINDIR}
-		COMPONENT HAMCLOCK_SYSTEMD EXCLUDE_FROM_ALL)
+	#install(PROGRAMS
+	#SourceCode/hamclock-fb0-800x480
+	#SourceCode/hamclock-fb0-1600x960
+	#SourceCode/hamclock-fb0-2400x1440
+	#SourceCode/hamclock-fb0-3200x1920
+	#DESTINATION ${CMAKE_INSTALL_BINDIR}
+	#COMPONENT HAMCLOCK_SYSTEMD EXCLUDE_FROM_ALL)
 
 install(PROGRAMS
 		SourceCode/hamclock-800x480
@@ -53,7 +53,7 @@ set(CPACK_RPM_EXCLUDE_FROM_AUTO_FILELIST_ADDITION
         /usr/lib/systemd
         /usr/lib/systemd/system
         )
-SET(CPACK_DEBIAN_PACKAGE_CONTROL_EXTRA "${CMAKE_CURRENT_SOURCE_DIR}/postinst")
+SET(CPACK_DEBIAN_HAMCLOCK_SYSTEMD_PACKAGE_CONTROL_EXTRA "${CMAKE_CURRENT_SOURCE_DIR}/postinst")
 
 include(CPack)
 
