@@ -4,29 +4,6 @@ This project creates a Debian package to install a compiled version of
 [HamClock](https://www.clearskyinstitute.com/ham/HamClock/) and enable
 launch on boot using [systemd](https://www.freedesktop.org/wiki/Software/systemd/)
 
-### Version 2.58
-
-Version 2.58 of [HamClock](https://www.clearskyinstitute.com/ham/HamClock/) has
-deprecated the use of /dev/fb0. It does still build and run.
-
-This version of `hamclock-systemd` installs `hamclock.png` and `hamclock.desktop` in the
-[XDG](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html) standard
-shared data directory under the program name which on Debian is `/usr/local/share/hamclock/`
-though these are not of use unless you build the X-11 versions.
-
-### Version 2.60
-
-As of version 2.60 [HamClock](https://www.clearskyinstitute.com/ham/HamClock/) binaries
-that support the use of /dev/fb0 no longer build using the provided source distribuion.
-The last successfully built package with thes binaries (Version 2.59) will continue to be
-available but new versions will not.
-
-### Versiion 2.63
-
-As of version 2.63 [HamClock](https://www.clearskyinstitute.com/ham/HamClock/) binaries
-that support the use of /dev/fb0 are building again and the hamclock-systemd package is
-available in my [repository](https://pa28.github.io/Repository).
-
 ## Running a Pi Headless
 
 Setting up a headless Raspberry Pi is not as straight forward as a regular set up.
@@ -72,7 +49,15 @@ package repository to your system. I will try to keep the packages up
 to date, but won't necessarily add all new packages to this GitHub
 repository.
 
-### Package Repository
+### Package Repository - [VFROTT.Ca](https://repo.vfrott.ca/)
+
+Gemfury (below) is a great resource, is free and someone else looks after it,
+that's a pretty good deal. Unfortunately the don't (yet) have a way of signing
+repositories, and it isn't as easy to separate different packages for different
+distributions. For example there is a binary incompatability between Raspberry Pi
+releases Buster and Bullseye. The link above has instructions.
+
+### Package Repository - Gemfury
 
 Thanks to the people over at [GemFury](https://gemfury.com/) who offer
 free public repositories of all kinds I can offer an easy way to 
