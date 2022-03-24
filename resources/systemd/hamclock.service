@@ -1,6 +1,7 @@
 [Unit]
 Description=HamClock execution service
-After=network.target
+After=multi-user.target
+AllowIsolate=yes
 StartLimitIntervalSec=0
 
 [Service]
