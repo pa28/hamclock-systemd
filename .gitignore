@@ -1,6 +1,8 @@
 .idea
 cmake-build-*
 ESPHamClock
+ESPHamClock.*
+_ESPHameClock.*
 ESPHamClock.old
 hamclock-fb0-*
 hamclock-800*
