@@ -1,2 +1,4 @@
 #!/bin/bash
 ./fetch && ./buildall && ./buildall-fb0
+cat ESPHamClock/version.h
+
