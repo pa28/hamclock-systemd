@@ -1,0 +1,26 @@
+#!/bin/bash
+BUILD_DIR="cmake-build-release"
+CODENAME=$(lsb_release -sc)
+#
+cd SourceCode || exit 1
+./build || exit 1
+cd .. || exit 1
+#
+VERSION=$(awk -F ' ' '{print $3}' < SourceCode/ESPHamClock/version.h | sed -e s/\"//g)
+sed -e s/HAMCLOCK_VERSION/${VERSION}/ < CMakeLists.src > CMakeLists.txt
+#
+rm -rf ${BUILD_DIR} || exit 1
+mkdir ${BUILD_DIR} || exit 1
+cd ${BUILD_DIR} || exit 1
+cmake -DCMAKE_BUILD_TYPE=Release .. || exit 1
+make package || exit 1
+#
+case $CODENAME in
+    bullseye)
+	echo "bullseye"
+	~/bin/vfrott -c bullseye -s stable cmake-build-release/hamclock*.deb
+	;;
+    *)
+	echo "No package upload for ${CODENAME}."
+	exit 1
+esac
