@@ -16,17 +16,23 @@ cmake -DCMAKE_BUILD_TYPE=Release .. || exit 1
 make package || exit 1
 #
 case $CODENAME in
+    buster)
+	echo "buster"
+	~/bin/gemfury hamclock_*.deb
+	~/bin/gemfury hamclock-systemd_*.deb
+	~/bin/vfrott -c buster -s stable hamclock*.deb
+	;;
     bullseye)
-		echo "bullseye"
-		~/bin/vfrott -c bullseye -s stable cmake-build-release/hamclock*.deb
-		;;
-	jammy)
-		echo "jammy"
-		~/bin/gemfury hamclock_*.deb
-		~/bin/gemfury hamclock-systemd_*.deb
-		~/bin/vfrott -s stable hamclock*.deb
-		;;
+	echo "bullseye"
+	~/bin/vfrott -c bullseye -s stable cmake-build-release/hamclock*.deb
+	;;
+    jammy)
+	echo "jammy"
+	~/bin/gemfury hamclock_*.deb
+	~/bin/gemfury hamclock-systemd_*.deb
+	~/bin/vfrott -s stable hamclock*.deb
+	;;
     *)
-		echo "No package upload for ${CODENAME}."
-		exit 1
+	echo "No package upload for ${CODENAME}."
+	exit 1
 esac

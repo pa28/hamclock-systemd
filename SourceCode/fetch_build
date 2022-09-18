@@ -1,0 +1,15 @@
+#!/bin/bash
+
+rm -f ESPHamClock.tgz
+rm -rf ESPHamClock
+if wget https://www.clearskyinstitute.com/ham/HamClock/ESPHamClock.tgz
+then
+    if tar -zxvf ESPHamClock.tgz
+    then
+        ./buildall && ./buildall-fb0
+    else
+        echo "Extract of TAR file failed."
+    fi
+else
+    echo "Fetching source code failed."
+fi
