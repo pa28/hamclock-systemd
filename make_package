@@ -17,10 +17,16 @@ make package || exit 1
 #
 case $CODENAME in
     bullseye)
-	echo "bullseye"
-	~/bin/vfrott -c bullseye -s stable cmake-build-release/hamclock*.deb
-	;;
+		echo "bullseye"
+		~/bin/vfrott -c bullseye -s stable cmake-build-release/hamclock*.deb
+		;;
+	jammy)
+		echo "jammy"
+		~/bin/gemfury hamclock_*.deb
+		~/bin/gemfury hamclock-systemd_*.deb
+		~/bin/vfrott -s stable hamclock*.deb
+		;;
     *)
-	echo "No package upload for ${CODENAME}."
-	exit 1
+		echo "No package upload for ${CODENAME}."
+		exit 1
 esac
