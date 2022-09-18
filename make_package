@@ -24,7 +24,7 @@ case $CODENAME in
 	;;
     bullseye)
 	echo "bullseye"
-	~/bin/vfrott -c bullseye -s stable cmake-build-release/hamclock*.deb
+	~/bin/vfrott -c bullseye -s stable hamclock*.deb
 	;;
     jammy)
 	echo "jammy"
