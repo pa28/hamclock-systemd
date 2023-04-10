@@ -1,4 +1,5 @@
 .idea
+CMakeLists.txt
 cmake-build-*
 ESPHamClock
 ESPHamClock.*
