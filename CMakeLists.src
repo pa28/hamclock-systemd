@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.13)
-project(hamclock-systemd VERSION HAMCLOCK_VERSION.9.2 HOMEPAGE_URL "https://github.com/pa28/hamclock-systemd")
+project(hamclock-systemd VERSION HAMCLOCK_VERSION.10.2 HOMEPAGE_URL "https://github.com/pa28/hamclock-systemd")
 include(GNUInstallDirs)
 
 install(FILES resources/systemd/hamclock.service DESTINATION /etc/systemd/system
@@ -9,10 +9,10 @@ install(FILES SourceCode/hamclock.png SourceCode/hamclock.desktop DESTINATION "$
 install(FILES resources/repository/ve3ysh.list DESTINATION /etc/apt/sources.list.d
 		COMPONENT VE3YSH_REPO EXCLUDE_FROM_ALL)
 	install(PROGRAMS
-	SourceCode/hamclock-fb0-800x480
-	SourceCode/hamclock-fb0-1600x960
-	SourceCode/hamclock-fb0-2400x1440
-	SourceCode/hamclock-fb0-3200x1920
+#	SourceCode/hamclock-fb0-800x480
+#	SourceCode/hamclock-fb0-1600x960
+#	SourceCode/hamclock-fb0-2400x1440
+#	SourceCode/hamclock-fb0-3200x1920
 	DESTINATION ${CMAKE_INSTALL_BINDIR}
 	COMPONENT HAMCLOCK_SYSTEMD EXCLUDE_FROM_ALL)
 
@@ -40,7 +40,7 @@ SET(CPACK_DEBIAN_PACKAGE_HOMEPAGE "https://github.com/pa28/hamclock-systemd")
 SET(CPACK_DEBIAN_PACKAGE_MAINTAINER "Ricahrd Buckley <repo@vfrott.ca>")
 set(CPACK_DEBIAN_PACKAGE_SHLIBDEPS ON)
 set(CPACK_PACKAGING_INSTALL_PREFIX ${CMAKE_INSTALL_PREFIX})
-set(CPACK_PACKAGE_HAMCLOCK_SYSTEMD_EXECUTABLES SourceCode/ESPHamClock/hamclock-fb0-800x480)
+#set(CPACK_PACKAGE_HAMCLOCK_SYSTEMD_EXECUTABLES SourceCode/ESPHamClock/hamclock-fb0-800x480)
 set(CPACK_PACKAGE_HAMCLOCK_EXECUTABLES SourceCode/ESPHamClock/hamclock-800x480)
 set(CPACK_RPM_EXCLUDE_FROM_AUTO_FILELIST_ADDITION
         /usr/local
@@ -54,10 +54,10 @@ SET(CPACK_DEBIAN_HAMCLOCK_SYSTEMD_PACKAGE_CONTROL_EXTRA "${CMAKE_CURRENT_SOURCE_
 
 include(CPack)
 
-cpack_add_component(HAMCLOCK_SYSTEMD
-		DISPLAY_NAME "hamclock-systemd"
-		DESCRIPTION "A systemd way to autostart hamclock on /dev/fb0"
-		)
+#cpack_add_component(HAMCLOCK_SYSTEMD
+#		DISPLAY_NAME "hamclock-systemd"
+#		DESCRIPTION "A systemd way to autostart hamclock on /dev/fb0"
+#		)
 cpack_add_component(HAMCLOCK
 		DISPLAY_NAME "hamclock"
 		DESCRIPTION "Precompiled X11 hamclock binaries"
