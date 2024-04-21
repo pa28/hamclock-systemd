@@ -26,6 +26,10 @@ case $CODENAME in
 	echo "bullseye"
 	~/bin/vfrott -c bullseye -s stable hamclock*.deb
 	;;
+    bookworm)
+        echo "bookworm"
+        ~/bin/vfrott -c bookworm -s stable hamclock*.deb
+        ;;
     jammy)
 	echo "jammy"
 	~/bin/gemfury hamclock_*.deb
