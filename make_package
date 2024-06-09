@@ -20,21 +20,21 @@ case $CODENAME in
 	echo "buster"
 	~/bin/gemfury hamclock_*.deb
 	~/bin/gemfury hamclock-systemd_*.deb
-	~/bin/vfrott -c buster -s stable hamclock*.deb
+	~/bin/vfrott -n -c buster -s stable hamclock*.deb
 	;;
     bullseye)
 	echo "bullseye"
-	~/bin/vfrott -c bullseye -s stable hamclock*.deb
+	~/bin/vfrott -n -c bullseye -s stable hamclock*.deb
 	;;
     bookworm)
         echo "bookworm"
-        ~/bin/vfrott -c bookworm -s stable hamclock*.deb
+        ~/bin/vfrott -n -c bookworm -s stable hamclock*.deb
         ;;
     jammy)
 	echo "jammy"
 	~/bin/gemfury hamclock_*.deb
 	~/bin/gemfury hamclock-systemd_*.deb
-	~/bin/vfrott -s stable hamclock*.deb
+	~/bin/vfrott -n -s stable hamclock*.deb
 	;;
     *)
 	echo "No package upload for ${CODENAME}."
