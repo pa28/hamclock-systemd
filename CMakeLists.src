@@ -9,10 +9,10 @@ install(FILES SourceCode/hamclock.png SourceCode/hamclock.desktop DESTINATION "$
 install(FILES resources/repository/ve3ysh.list DESTINATION /etc/apt/sources.list.d
 		COMPONENT VE3YSH_REPO EXCLUDE_FROM_ALL)
 	install(PROGRAMS
-#	SourceCode/hamclock-fb0-800x480
-#	SourceCode/hamclock-fb0-1600x960
-#	SourceCode/hamclock-fb0-2400x1440
-#	SourceCode/hamclock-fb0-3200x1920
+	SourceCode/hamclock-fb0-800x480
+	SourceCode/hamclock-fb0-1600x960
+	SourceCode/hamclock-fb0-2400x1440
+	SourceCode/hamclock-fb0-3200x1920
 	DESTINATION ${CMAKE_INSTALL_BINDIR}
 	COMPONENT HAMCLOCK_SYSTEMD EXCLUDE_FROM_ALL)
 
@@ -54,10 +54,10 @@ SET(CPACK_DEBIAN_HAMCLOCK_SYSTEMD_PACKAGE_CONTROL_EXTRA "${CMAKE_CURRENT_SOURCE_
 
 include(CPack)
 
-#cpack_add_component(HAMCLOCK_SYSTEMD
-#		DISPLAY_NAME "hamclock-systemd"
-#		DESCRIPTION "A systemd way to autostart hamclock on /dev/fb0"
-#		)
+cpack_add_component(HAMCLOCK_SYSTEMD
+		DISPLAY_NAME "hamclock-systemd"
+		DESCRIPTION "A systemd way to autostart hamclock on /dev/fb0"
+		)
 cpack_add_component(HAMCLOCK
 		DISPLAY_NAME "hamclock"
 		DESCRIPTION "Precompiled X11 hamclock binaries"
