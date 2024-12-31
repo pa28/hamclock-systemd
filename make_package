@@ -45,24 +45,15 @@ exit 0
 #
 case $CODENAME in
     buster)
-	echo "buster"
-	~/bin/vfrott -n -c buster -s stable hamclock*.deb
-	;;
     bullseye)
-	echo "bullseye"
-	~/bin/vfrott -n -c bullseye -s stable hamclock*.deb
-	;;
     bookworm)
-        echo "bookworm"
-        ~/bin/vfrott -n -c bookworm -s stable hamclock*.deb
+        echo $CODENAME
+        ../bin/vfrott -n -c $CODENAME -s stable hamclock*.deb
         ;;
     nobel)
-	echo "jammy"
-	~/bin/gemfury hamclock_*.deb
-	~/bin/gemfury hamclock-systemd_*.deb
-	~/bin/vfrott -n -s stable hamclock*.deb
+        echo $CODENAME
+	../bin/vfrott -n -s stable hamclock*.deb
 	;;
     *)
 	echo "No package upload for ${CODENAME}."
-	exit 1
 esac
