@@ -1,5 +1,5 @@
 #!/bin/bash
-./fetch && ./buildall #&& ./buildall-fb0
+./fetch && ./buildall && ./buildall-fb0
 VERSION_STRING=$(grep -o '".*"' ESPHamClock/version.cpp | sed 's/"//g')
 sed -e s/HAMCLOCK_VERSION/${VERSION_STRING}/ < ../CMakeLists.src > ../CMakeLists.txt
 echo "Building version ${VERSION_STRING}"

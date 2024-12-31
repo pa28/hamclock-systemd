@@ -47,7 +47,7 @@ case $CODENAME in
 	echo "jammy"
 	~/bin/gemfury hamclock_*.deb
 	~/bin/gemfury hamclock-systemd_*.deb
-	~/bin/vfrott -s stable hamclock*.deb
+	~/bin/vfrott -n -s stable hamclock*.deb
 	;;
     *)
 	echo "No package upload for ${CODENAME}."
