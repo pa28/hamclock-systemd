@@ -36,8 +36,6 @@ make package || exit 1
 case $CODENAME in
     buster)
 	echo "buster"
-	~/bin/gemfury hamclock_*.deb
-	~/bin/gemfury hamclock-systemd_*.deb
 	~/bin/vfrott -c buster -s stable hamclock*.deb
 	;;
     bullseye)
