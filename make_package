@@ -28,21 +28,22 @@ mkdir ${BUILD_DIR} || exit 1
 cd ${BUILD_DIR} || exit 1
 cmake -DCMAKE_BUILD_TYPE=Release .. || exit 1
 make package || exit 1
+exit 0
 #
 case $CODENAME in
     buster)
 	echo "buster"
-	~/bin/vfrott -c buster -s stable hamclock*.deb
+	~/bin/vfrott -n -c buster -s stable hamclock*.deb
 	;;
     bullseye)
 	echo "bullseye"
-	~/bin/vfrott -c bullseye -s stable hamclock*.deb
+	~/bin/vfrott -n -c bullseye -s stable hamclock*.deb
 	;;
     bookworm)
         echo "bookworm"
-        ~/bin/vfrott -c bookworm -s stable hamclock*.deb
+        ~/bin/vfrott -n -c bookworm -s stable hamclock*.deb
         ;;
-    jammy)
+    nobel)
 	echo "jammy"
 	~/bin/gemfury hamclock_*.deb
 	~/bin/gemfury hamclock-systemd_*.deb
