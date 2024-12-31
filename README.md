@@ -67,11 +67,11 @@ sudo apt install -f ./hamclock-systemd-2.57.2-4.armv7l.deb
 
 The package versioning is designed to follow HamClock versioning and
 provide information on any changes or updates to the wrapping systemd
-code. For example the package: `hamclock-systemd-2.57.1-3` can be
+code. For example the package: `hamclock-systemd-4.11.11.0` can be
 understood as:
-* Containing HamClock version 2.57
-* systemd code version 1
-* Build number 3
+* Containing HamClock version 4.11
+* systemd code version 11
+* Build number 0
 
 ## Availability
 
@@ -83,9 +83,8 @@ repository.
 
 ### Package Repository
 
-Thanks to the people over at [GemFury](https://gemfury.com/) who offer
-free public repositories of all kinds I can offer an easy way to 
-install HamChrono and keep updated.
+With the construction and maintenance of an Aptitude Package repository I
+decided to deprecate my repository at [GemFury](https://gemfury.com/).
 
 ### Installation
 
@@ -117,7 +116,7 @@ sudo systemctl disable hamclock
 
 ## Using this Git Repository
 
-To use this repository to build your own package follow thses steps:
+To use this repository to build your own package follow these steps:
 
 1.  Install prerequisites if not already installed:
 ```
@@ -129,46 +128,16 @@ sudo apt -y install cmake make g++ libx11-dev
 sudo apt install git # if not already installed.
 git clone https://github.com/pa28/hamclock-systemd.git
 ```
-3.  Download the current version of the HamClock distribution
+
+3.  Build the packages:
+A make package script now takes care of downloading the source code,
+updating the version number for CMake, building the eight version of
+the program and creating the debian packages.
 ```
-cd hamclock-systemd/SourceCode
-rm ESPHamClock.zip # Delete the old version if there is one
-wget https://www.clearskyinstitute.com/ham/HamClock/ESPHamClock.zip
-unzip ESPHamClock.zip
-./buildall
+./make_package
 ```
-4.  The contents of the SourceCode directory should now contain the four supported display size binaries:
-```
-richard@tardis:~/CLionProjects/hamclock-systemd/SourceCode$ ls -l
-total 21292
--rwxrwxr-x 1 richard richard     198 Jan 29 15:19 buildall
-drwxr-xr-x 3 richard richard    4096 Jan 30 09:32 ESPHamClock
--rw-rw-r-- 1 richard richard 1161229 Jan 29 12:07 ESPHamClock.zip
--rwxrwxr-x 1 richard richard 4951016 Jan 30 09:32 hamclock-fb0-1600x960
--rwxrwxr-x 1 richard richard 5245984 Jan 30 09:32 hamclock-fb0-2400x1440
--rwxrwxr-x 1 richard richard 5659552 Jan 30 09:32 hamclock-fb0-3200x1920
--rwxrwxr-x 1 richard richard 4770312 Jan 30 09:32 hamclock-fb0-800x480
-```
-5.  Build the package:
-```
-cd ..
-#
-# Edit CMakeLists.txt to set the project version number. For apt install to accept the package as new the
-# version number must be greater than a currently installed package.
-#
-mkdir cmake-build-debug
-cd cmake-build-debug
-cmake -DCMAKE_BUILD_TYPE=Release ..
-make package
-```
-6.  Output of `make package` should look similar to this:
-```
-Run CPack packaging tool...
-CPack: Create package using DEB
-CPack: Install projects
-CPack: - Run preinstall target for: hamclock-systemd
-CPack: - Install project: hamclock-systemd
-CPack: Create package
-CPackDeb: - Generating dependency list
-CPack: - package: /home/richard/HamClock/cmake-build-release/hamclock-systemd-2.57.2-4.armv7l.deb generated.
-```
+The ```make_package``` script will exit before attempting to upload the
+generated packages to the repository. You can try to remove that but
+you won't have the credentials to log into the server, and won't be
+on an IP address that the firewall will allow in. If you do and you are
+I guess that's on me.
