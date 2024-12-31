@@ -16,8 +16,8 @@ while true
 do
   echo -n "Build hamclock for ${CODENAME} ${ARCH} (Y/n)? "
   read_char char
-  [[ $char == 'N' || $char == 'n' ]] && exit 0
-  [[ $char != 'Y' && $char != 'y' && $char != '\n' ]] && break
+  [[ $char == 'N' || $char == 'n' ]] && echo && exit 0
+  [[ $char == 'Y' || $char == 'y' || $char == "" ]] && break
 done
 echo "Building..."
 #
@@ -28,6 +28,19 @@ mkdir ${BUILD_DIR} || exit 1
 cd ${BUILD_DIR} || exit 1
 cmake -DCMAKE_BUILD_TYPE=Release .. || exit 1
 make package || exit 1
+type vfrott_upload_auth >/dev/null 2>/dev/null && vfrott_upload_auth || exit 0
+#
+char=' '
+while true
+do
+  echo -n "Upload packages for ${CODENAME} ${ARCH} (y/N)? "
+  read_char char
+  [[ $char == 'N' || $char == 'n' || $char == "" ]] && echo && exit 0
+  [[ $char == 'Y' || $char == 'y' ]] && break
+done
+echo "Uploading..."
+#
+echo "Oops!"
 exit 0
 #
 case $CODENAME in
