@@ -1,7 +1,25 @@
 #!/bin/bash
+
+# read_char var
+read_char() {
+  stty -icanon -echo
+  eval "$1=\$(dd bs=1 count=1 2>/dev/null)"
+  stty icanon echo
+}
+
 BUILD_DIR="cmake-build-release"
 CODENAME=$(lsb_release -sc)
+ARCH=$(dpkg --print-architecture)
 #
+char=' '
+while true
+do
+  echo -n "Build hamclock for ${CODENAME} ${ARCH} (Y/n)? "
+  read_char char
+  [[ $char == 'N' || $char == 'n' ]] && exit 0
+  [[ $char != 'Y' && $char != 'y' && $char != '\n' ]] && break
+done
+echo "Building..."
 cd SourceCode || exit 1
 ./build || exit 1
 cd .. || exit 1
