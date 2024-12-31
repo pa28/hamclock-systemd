@@ -1,5 +1,26 @@
 #!/bin/bash
 
+# read_char var
+read_char() {
+  stty -icanon -echo
+  eval "$1=\$(dd bs=1 count=1 2>/dev/null)"
+  stty icanon echo
+}
+
+if test -d ESPHamClock; then
+  VERSION_STRING=$(grep -o '".*"' ESPHamClock/version.cpp | sed 's/"//g')
+  char=' '
+  while true
+  do
+    echo -n "Existing source directory found with version $VERSION_STRING, download fresh files (Y/n)? "
+    read_char char
+    [[ $char == 'N' || $char == 'n' ]] && echo && exit 0
+    [[ $char == 'Y' || $char == 'y' || $char == "" ]] && break
+  done
+fi
+
+echo "Downloading..."
+
 rm -f ESPHamClock.tgz
 rm -rf ESPHamClock
 wget -q https://www.clearskyinstitute.com/ham/HamClock/ESPHamClock.tgz
