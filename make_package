@@ -20,12 +20,8 @@ do
   [[ $char != 'Y' && $char != 'y' && $char != '\n' ]] && break
 done
 echo "Building..."
-cd SourceCode || exit 1
-./build || exit 1
-cd .. || exit 1
 #
-VERSION=$(awk -F ' ' '{print $3}' < SourceCode/ESPHamClock/version.h | sed -e s/\"//g)
-sed -e s/HAMCLOCK_VERSION/${VERSION}/ < CMakeLists.src > CMakeLists.txt
+cd SourceCode && ./build && cd .. || exit 1
 #
 rm -rf ${BUILD_DIR} || exit 1
 mkdir ${BUILD_DIR} || exit 1
