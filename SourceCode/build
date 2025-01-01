@@ -1,5 +1,29 @@
 #!/bin/bash
-./fetch && ./buildall && ./buildall-fb0
+
+# read_char var
+read_char() {
+  stty -icanon -echo
+  eval "$1=\$(dd bs=1 count=1 2>/dev/null)"
+  stty icanon echo
+}
+
+./fetch || exit 1
+
+if [ $(find . -name "hamclock-*" -print | wc -l) == "8" ]; then
+  char=' '
+  while true
+  do
+    echo -n "All binaries found, do you wish to rebuild (Y/n)? "
+    read_char char
+    [[ $char == 'N' || $char == 'n' ]] && echo && exit 0
+    [[ $char == 'Y' || $char == 'y' || $char == "" ]] && break
+  done
+fi
+
+echo "Building..."
+
+./buildall && ./buildall-fb0 || exit 1
+
 VERSION_STRING=$(grep -o '".*"' ESPHamClock/version.cpp | sed 's/"//g')
 sed -e s/HAMCLOCK_VERSION/${VERSION_STRING}/ < ../CMakeLists.src > ../CMakeLists.txt
 echo "Building version ${VERSION_STRING}"
