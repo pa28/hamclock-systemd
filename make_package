@@ -40,9 +40,6 @@ do
 done
 echo "Uploading..."
 #
-echo "Oops!"
-exit 0
-#
 case $CODENAME in
     buster)
     bullseye)
