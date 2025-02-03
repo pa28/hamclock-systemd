@@ -45,7 +45,7 @@ case $CODENAME in
         echo $CODENAME
         ../bin/vfrott -n -c $CODENAME -s stable hamclock*.deb
         ;;
-    nobel)
+    noble)
         echo $CODENAME
 	../bin/vfrott -n -s stable hamclock*.deb
 	;;
