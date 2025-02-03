@@ -22,7 +22,7 @@ fi
 
 echo "Building..."
 
-./buildall || exit 1
+./buildall && ./buildall-fb0 || exit 1
 
 VERSION_STRING=$(grep -o '".*"' ESPHamClock/version.cpp | sed 's/"//g')
 sed -e s/HAMCLOCK_VERSION/${VERSION_STRING}/ < ../CMakeLists.src > ../CMakeLists.txt
