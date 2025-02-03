@@ -4,7 +4,7 @@
 for target in "hamclock-800x480" "hamclock-1600x960" "hamclock-2400x1440" "hamclock-3200x1920"
 do
 	echo $target
-	(cd ESPHamClock; make -j 4 $target; mv $target ..) || exit 1
+	(cd ESPHamClock; make clean; make -j 4 $target; mv $target ..) || exit 1
 done
 cp ESPHamClock/hamclock.png ESPHamClock/hamclock.desktop .
 chmod ug+w hamclock.png hamclock.desktop
