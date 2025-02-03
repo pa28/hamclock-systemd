@@ -1,31 +1,12 @@
-# hamclock-systemd -- June 20, 2021
+# hamclock-systemd -- February 3, 2025
 
-This project creates a Debian package to install a compiled version of
-[HamClock](https://www.clearskyinstitute.com/ham/HamClock/) and enable
-launch on boot using [systemd](https://www.freedesktop.org/wiki/Software/systemd/)
-
-### Version 2.58
-
-Version 2.58 of [HamClock](https://www.clearskyinstitute.com/ham/HamClock/) has
-deprecated the use of /dev/fb0. It does still build and run.
-
-This version of `hamclock-systemd` installs `hamclock.png` and `hamclock.desktop` in the
-[XDG](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html) standard
-shared data directory under the program name which on Debian is `/usr/local/share/hamclock/`
-though these are not of use unless you build the X-11 versions.
-
-### Version 2.60
-
-As of version 2.60 [HamClock](https://www.clearskyinstitute.com/ham/HamClock/) binaries
-that support the use of /dev/fb0 no longer build using the provided source distribuion.
-The last successfully built package with thes binaries (Version 2.59) will continue to be
-available but new versions will not.
-
-### Versiion 2.63
-
-As of version 2.63 [HamClock](https://www.clearskyinstitute.com/ham/HamClock/) binaries
-that support the use of /dev/fb0 are building again and the hamclock-systemd package is
-available in my [repository](https://pa28.github.io/Repository).
+This project creates three Debian packages to install a compiled versions of
+[HamClock](https://www.clearskyinstitute.com/ham/HamClock/):
+1. hamclock: Provides binaries compiled to use the X11 windows system to display on the desktop.
+2. hamclock-systemd: Provides binaries compiled to use the raw frame buffer (/dev/fb0) which
+can be started using the include systemd service.
+3. hamclock-web: Provides binaries compiled to provide web-only access to hamclock. Eventually
+this package will include a systemd service.
 
 ## Running a Pi Headless
 
@@ -118,18 +99,18 @@ sudo systemctl disable hamclock
 
 To use this repository to build your own package follow these steps:
 
-1.  Install prerequisites if not already installed:
+1. Install prerequisites if not already installed:
 ```
 sudo apt update
 sudo apt -y install cmake make g++ libx11-dev
 ```
-2.  Clone the repository to your local system (requires git)
+2. Clone the repository to your local system (requires git)
 ```
 sudo apt install git # if not already installed.
 git clone https://github.com/pa28/hamclock-systemd.git
 ```
 
-3.  Build the packages:
+3. Build the packages:
 A make package script now takes care of downloading the source code,
 updating the version number for CMake, building the eight version of
 the program and creating the debian packages.
