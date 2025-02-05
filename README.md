@@ -5,8 +5,39 @@ This project creates three Debian packages to install a compiled versions of
 1. hamclock: Provides binaries compiled to use the X11 windows system to display on the desktop.
 2. hamclock-systemd: Provides binaries compiled to use the raw frame buffer (/dev/fb0) which
 can be started using the include systemd service.
-3. hamclock-web: Provides binaries compiled to provide web-only access to hamclock. Eventually
-this package will include a systemd service.
+3. hamclock-web: Provides binaries compiled to provide web-only access to hamclock. Like the
+repository `hamclock-systemd` these binaries can also be controlled using the included systemd
+service.
+
+## Notes on Running `hamclock-web` Service
+
+The service file is located at `/etc/systemd/system/hamclock-web.service`. By default, it
+contains:
+```
+[Unit]
+Description=HamClock web service
+After=multi-user.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=on-failure
+RestartSec=1
+User=root
+Group=root
+ExecStartPre=/bin/sleep 10
+ExecStart=/usr/local/bin/hamclock-web-1600x960
+
+[Install]
+WantedBy=multi-user.target
+```
+You **should** probably change `User` and `Group` to a normal user and group. Using root:root works, and
+may be what you want, but it will allow anyone with access to the web port root access to the host
+computer.
+
+You can also choose the resolution to use by setting `ExecStart`.
+
+Once these changes are made, start the service (instructions below) and browse to http://localhost:8081/live.html
 
 ## Running a Pi Headless
 
@@ -69,14 +100,20 @@ decided to deprecate my repository at [GemFury](https://gemfury.com/).
 
 ### Installation
 
-#### Using an Aptitude Package -- The Easy Way
+#### Using a systemd enabled package
 
-See the [instructions here.](https://pa28.github.io/Repository)
+See the [repository instructions here.](https://pa28.github.io/Repository)
 
 Then perform the following:
 ```
 sudo apt update
+```
+Install the systemd package desired (or both):
+```
 sudo apt install hamclock-systemd
+```
+```
+sudo apt install hamclock-web
 ```
 To start HamClock:
 ```
@@ -94,6 +131,8 @@ To prevent HamClock from starting on boot:
 ```
 sudo systemctl disable hamclock
 ```
+
+For the web service use similar commands but replace `hamclock` with `hamclock-web`
 
 ## Using this Git Repository
 

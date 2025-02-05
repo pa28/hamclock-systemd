@@ -1,0 +1,16 @@
+[Unit]
+Description=HamClock web service
+After=multi-user.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=on-failure
+RestartSec=1
+User=root
+Group=root
+ExecStartPre=/bin/sleep 10
+ExecStart=/usr/local/bin/hamclock-web-1600x960
+
+[Install]
+WantedBy=multi-user.target

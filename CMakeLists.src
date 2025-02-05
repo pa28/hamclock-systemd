@@ -4,6 +4,8 @@ include(GNUInstallDirs)
 
 install(FILES resources/systemd/hamclock.service DESTINATION /etc/systemd/system
 		COMPONENT HAMCLOCK_SYSTEMD EXCLUDE_FROM_ALL)
+install(FILES resources/systemd/hamclock-web.service DESTINATION /etc/systemd/system
+		COMPONENT HAMCLOCK_WEB EXCLUDE_FROM_ALL)
 install(FILES SourceCode/hamclock.png SourceCode/hamclock.desktop DESTINATION "${CMAKE_INSTALL_DATADIR}/hamclock"
 		COMPONENT HAMCLOCK EXCLUDE_FROM_ALL)
 install(FILES resources/repository/ve3ysh.list DESTINATION /etc/apt/sources.list.d
