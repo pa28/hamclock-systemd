@@ -9,7 +9,7 @@ can be started using the include systemd service.
 repository `hamclock-systemd` these binaries can also be controlled using the included systemd
 service.
 
-Starting with build system version 13.1 the compiler and linker optiions `-g` are removed
+Starting with build system version 13.1 the compiler and linker options `-g` are removed
 eliminating generation of debug symbols wich saves 10 megabytes per package.
 
 ## Notes on Running `hamclock-web` Service
