@@ -27,8 +27,6 @@ wget -q https://www.clearskyinstitute.com/ham/HamClock/ESPHamClock.tgz
 tar -zxvf ESPHamClock.tgz
 
 echo "Setting build to remove debug information..."
-chmod u+w ESPHamClock/Makefile
-sed -e "s/-g //" ESPHamClock/Makefile > ESPHamClock/Makefile.new
-mv ESPHamClock/Makefile.new ESPHamClock/Makefile
+chmod u+w ESPHamClock/Makefile && sed -e "s/-g //" ESPHamClock/Makefile > ESPHamClock/Makefile.new && mv ESPHamClock/Makefile.new ESPHamClock/Makefile || echo "Could not edit Makefile to remove debug symbols."
 
 rm -f hamclock-1600x960 hamclock-2400x1440 hamclock-3200x1920 hamclock-800x480 hamclock-fb0-1600x960 hamclock-fb0-2400x1440 hamclock-fb0-3200x1920 hamclock-fb0-800x480
