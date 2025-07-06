@@ -12,7 +12,7 @@ do
         s) SUITE=${OPTARG};;
         c) CODENAME=${OPTARG}; SEP="/";;
 	n) REBUILD=0;;
-	r) ssh ubuntu.vfrott.ca bin/rebuild-repo; exit 0;;
+	r) ssh repo.vfrott.ca bin/rebuild-repo; exit 0;;
 	?) echo "Usage: " $(basename $0) ${USAGE}
     esac
 done
