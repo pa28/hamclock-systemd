@@ -32,10 +32,10 @@ repopath="/var/www/repo/pool/${CODENAME}${SEP}${SUITE}"
 for file in "$@"
 do
     base=$(basename ${file})
-    scp ${file} ubuntu.vfrott.ca:${repopath}/${base}
+    scp ${file} repo.vfrott.ca:${repopath}/${base}
 done
     if [ "${REBUILD}" -eq "1" ]
     then
-        ssh ubuntu.vfrott.ca bin/rebuild-repo
+        ssh repo.vfrott.ca bin/rebuild-repo
     fi
 exit 0
